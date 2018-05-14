@@ -1,0 +1,77 @@
+[
+    {
+        "name" : "example-service-one",
+        "active" : true,
+        "proxy" : {
+            "preserve_host" : false,
+            "listen_path" : "/example/*",
+            "upstreams" : {
+                "balancing": "roundrobin",
+                "targets": [
+                    {"target": "http://service1:8080/"}
+                ]
+            },
+            "insecure_skip_verify": false,
+            "strip_path" : false,
+            "append_path" : false,
+            "enable_load_balancing": false,
+            "methods" : ["GET"],
+            "hosts": []
+        },
+        "plugins": [],
+        "health_check": {
+            "url": "http://service1:8080/status",
+            "timeout": 3
+        }
+    },
+    {
+        "name" : "example-service-two",
+        "active" : true,
+        "proxy" : {
+            "preserve_host" : false,
+            "listen_path" : "/example/*",
+            "upstreams" : {
+                "balancing": "roundrobin",
+                "targets": [
+                    {"target": "http://service2:8080/"}
+                ]
+            },
+            "insecure_skip_verify": false,
+            "strip_path" : false,
+            "append_path" : false,
+            "enable_load_balancing": false,
+            "methods" : ["GET"],
+            "hosts": []
+        },
+        "plugins": [],
+        "health_check": {
+            "url": "http://service2:8080/status",
+            "timeout": 3
+        }
+    },
+    {
+        "name" : "example-service-three",
+        "active" : true,
+        "proxy" : {
+            "preserve_host" : false,
+            "listen_path" : "/example/*",
+            "upstreams" : {
+                "balancing": "roundrobin",
+                "targets": [
+                    {"target": "http://service3:8080/"}
+                ]
+            },
+            "insecure_skip_verify": false,
+            "strip_path" : false,
+            "append_path" : false,
+            "enable_load_balancing": false,
+            "methods" : ["GET"],
+            "hosts": []
+        },
+        "plugins": [],
+        "health_check": {
+            "url": "http://service3:8080/status",
+            "timeout": 3
+        }
+    }
+]
