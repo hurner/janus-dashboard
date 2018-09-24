@@ -16,7 +16,7 @@ describe('Login page', () => {
       .type(USERNAME)
     cy.get('input[name="password"]')
       .type(PASSWORD)
-    cy.get('button.login-form__button')
+    cy.get('.j-section.login-form__login-section button.login-form__button')
       .click()
 
     cy.get('.j-header__user-name')
